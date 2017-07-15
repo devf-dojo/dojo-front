@@ -4,14 +4,21 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "material-ui": "next",
     "next": "beta",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "material-ui": "next"
+    "react-dom": "^15.6.1"
   },
   "scripts": {
+    "test": "jest",
     "dev": "next",
     "build": "next build",
     "start": "next start"
+  },
+  "devDependencies": {
+    "enzyme": "^2.9.1",
+    "jest": "^20.0.4",
+    "react-addons-test-utils": "^15.6.0",
+    "react-test-renderer": "^15.6.1"
   }
 }

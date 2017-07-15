@@ -51,6 +51,7 @@ class Index extends Component {
           <Button raised color='accent' onClick={this.handleClick}>
             Super Secret Password
           </Button>
+          <p>Hello World!</p>
         </div>
       </App>
     )
