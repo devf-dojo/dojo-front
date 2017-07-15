@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { withStyles, createStyleSheet, MuiThemeProvider } from 'material-ui/styles'
 import { getDefaultContext } from '../styles/createDefaultContext'
+import AppBar from 'material-ui/AppBar'
+import Toolbar from 'material-ui/Toolbar'
+import Typography from 'material-ui/Typography'
 
 const styleSheet = createStyleSheet('App', theme => ({
   '@global': {
@@ -37,9 +40,18 @@ class App extends Component {
     const { styleManager, theme } = getDefaultContext()
     return (
       <MuiThemeProvider styleManager={styleManager} theme={theme}>
-        <AppWrapper>
-          {this.props.children}
-        </AppWrapper>
+        <div>
+          <AppBar position="static" color="default">
+            <Toolbar>
+              <Typography type="title" color="inherit">
+                Title
+              </Typography>
+            </Toolbar>
+          </AppBar>
+          <AppWrapper>
+            {this.props.children}
+          </AppWrapper>
+        </div>
       </MuiThemeProvider>
     )
   }
