@@ -1,13 +1,13 @@
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import createPalette from 'material-ui/styles/palette'
 import createMuiTheme from 'material-ui/styles/theme'
-import { purple, green } from 'material-ui/colors'
+import { purple, green, blueGrey, red } from 'material-ui/colors'
 
 const createDefaultContext = () =>
   MuiThemeProvider.createDefaultContext({
     theme: createMuiTheme({
       palette: createPalette({
-        primary: purple,
+        primary: blueGrey,
         accent: green
       })
     })
