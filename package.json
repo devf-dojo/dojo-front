@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "material-ui": "next",
+    "material-ui-icons": "^1.0.0-alpha.19",
     "next": "beta",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
