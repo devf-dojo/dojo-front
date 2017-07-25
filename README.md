@@ -13,7 +13,8 @@ The principal motivation for this project is let the new students that they want
 
 ### Setup
 
-* Install all the dependencies `yarn install` or `npm install`
+* Install globally yarn `npm install -g yarn`
+* Install all the dependencies `yarn install`
 * Run the development server `npm run dev`
 * Then you're done! :D
 
