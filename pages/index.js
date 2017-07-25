@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import * as firebase from 'firebase'
 import Button from 'material-ui/Button'
 import Dialog, {
   DialogTitle,
@@ -9,6 +8,7 @@ import Dialog, {
 } from 'material-ui/Dialog'
 import Typography from 'material-ui/Typography'
 import App from '../components/App'
+import Firebase from '../components/firebase'
 
 const styles = {
   container: {
@@ -33,25 +33,10 @@ class Index extends Component {
       open: true
     })
   };
-  
-  login () {
-    var provider = new firebase.auth.GithubAuthProvider();
-    firebase.auth().signInWithPopup(provider).then(function(result) {
-      // This gives you a GitHub Access Token. You can use it to access the GitHub API.
-      var token = result.credential.accessToken;
-      // The signed-in user info.
-      var user = result.user;
-      // ...
-    }).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
-    });
+
+  login() {
+    var fb = new Firebase();
+    fb.login();
   }
 
   render () {

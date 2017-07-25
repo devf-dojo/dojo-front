@@ -11,7 +11,8 @@
     "material-ui": "next",
     "next": "beta",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-singleton": "^1.3.3"
   },
   "scripts": {
     "test": "jest",

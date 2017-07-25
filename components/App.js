@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import * as firebase from 'firebase'
 import PropTypes from 'prop-types'
 import { withStyles, createStyleSheet, MuiThemeProvider } from 'material-ui/styles'
 import { getDefaultContext } from '../styles/createDefaultContext'
@@ -24,16 +23,6 @@ const styleSheet = createStyleSheet('App', theme => ({
 let AppWrapper = props => props.children
 
 AppWrapper = withStyles(styleSheet)(AppWrapper)
-
-const config = {
-  apiKey: "AIzaSyD1VJ6FzFYDVm0NTAh4bE-_I4M7pdH5uZo",
-  authDomain: "devf-dojo-admin.firebaseapp.com",
-  databaseURL: "https://devf-dojo-admin.firebaseio.com",
-  projectId: "devf-dojo-admin",
-  storageBucket: "devf-dojo-admin.appspot.com",
-  messagingSenderId: "183887932653"
-};
-firebase.initializeApp(config);
 
 class App extends Component {
   componentDidMount () {
