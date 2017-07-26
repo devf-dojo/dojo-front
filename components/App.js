@@ -34,13 +34,10 @@ class App extends Component {
   }
 
   render () {
-    const { styleManager, theme } = getDefaultContext()
     return (
-      <MuiThemeProvider styleManager={styleManager} theme={theme}>
         <AppWrapper>
           {this.props.children}
         </AppWrapper>
-      </MuiThemeProvider>
     )
   }
 }

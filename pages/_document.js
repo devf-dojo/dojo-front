@@ -1,21 +1,20 @@
 
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
-import { getDefaultContext, setDefaultContext } from '../styles/createDefaultContext'
+// import { getDefaultContext, setDefaultContext } from '../styles/createDefaultContext'
 
 export default class MyDocument extends Document {
   static async getInitialProps (ctx) {
-    setDefaultContext()
+    // setDefaultContext()
     const page = ctx.renderPage()
-    const styleContext = getDefaultContext()
-    return {
-      ...page,
-      styles: <style id='jss-server-side' dangerouslySetInnerHTML={{ __html: styleContext.styleManager.sheetsToString() }} />
+    
+    return { 
+      page, 
+      styles: <style id='jss-server-side'/>
     }
   }
 
   render () {
-    const styleContext = getDefaultContext()
     return (
       <html lang='en'>
         <Head>
@@ -30,7 +29,7 @@ export default class MyDocument extends Document {
             }
           />
           {/* PWA primary color */}
-          <meta name='theme-color' content={styleContext.theme.palette.primary[500]} />
+          <meta name='theme-color' />
           <link
             rel='stylesheet'
             href='https://fonts.googleapis.com/css?family=Roboto:300,400,500'
