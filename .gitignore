@@ -85,8 +85,9 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
+# https://yarnpkg.com/blog/2016/11/24/lockfiles-for-all/
 # Yarn Lock file
-yarn.lock
+# yarn.lock
 
 # package.json Lock file
 package-lock.json
