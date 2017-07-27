@@ -1,0 +1,16 @@
+{
+  "name": "front-dojo",
+  "version": "0.0.1",
+  "description": "aplicacion frontend para el dojo",
+  "main": "index.js",
+  "repository": "https://github.com/devf-dojo/dojo-front",
+  "license": "MIT",
+  "dependencies": {
+    "nuxt": "^1.0.0-alpha.5"
+  },
+  "scripts":{
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt"
+  }
+}
