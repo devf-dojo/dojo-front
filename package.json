@@ -6,9 +6,11 @@
   "repository": "https://github.com/devf-dojo/dojo-front",
   "license": "MIT",
   "dependencies": {
-    "nuxt": "^1.0.0-alpha.5"
+    "node-sass": "^4.5.3",
+    "nuxt": "^1.0.0-alpha.5",
+    "sass-loader": "^6.0.6"
   },
-  "scripts":{
+  "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt"
