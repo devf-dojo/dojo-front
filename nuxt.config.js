@@ -11,18 +11,5 @@ module.exports = {
   },
   css:[
     '~/styles/main.scss'
-  ],
-  modules: [
-    {
-      src: '@rafamaciel/firebase',
-      options: {
-        apikey: '56f0c5f5e093d2a1c8cd',
-        authDomain: 'devf-dojo-admin.firebaseapp.com',
-        databaseURL: 'https://devf-dojo-admin.firebaseio.com',
-        projectId: 'devf-dojo-admin',
-        storageBucket: 'devf-dojo-admin.appspot.com',
-        messagingSenderId: '183887932653'
-      }
-    }
   ]
 }
