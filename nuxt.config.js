@@ -16,7 +16,7 @@ module.exports = {
     {
       src: '@rafamaciel/firebase',
       options: {
-        apikey: '56f0c5f5e093d2a1c8cd',
+        apikey: 'AIzaSyD1VJ6FzFYDVm0NTAh4bE-_I4M7pdH5uZo',
         authDomain: 'devf-dojo-admin.firebaseapp.com',
         databaseURL: 'https://devf-dojo-admin.firebaseio.com',
         projectId: 'devf-dojo-admin',

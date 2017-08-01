@@ -1,8 +1,11 @@
 <template id="">
   <div class="">
 
-    <a class="waves-effect waves-light btn" v-on:click="login( )"><i class="material-icons right">GitHub</i>log in
+    <a class="waves-effect waves-light btn" v-on:click="login( )"><i class="material-icons right"></i>log in
   </a>
+
+
+
 
   </div>
 
