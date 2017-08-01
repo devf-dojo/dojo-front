@@ -23,11 +23,22 @@ export default {
     },
   methods: {
     login () {
-      console.log(this.$firebase.auth())
-      const provider = this.$firebase.auth.GithubAuthProvider()
-      this.$firebase.auth().signInWithPopup(provider).then(result=>{console.log(result)})
-
+      var provider = new firebase.auth.GithubAuthProvider()
+      firebase.auth().signInWithPopup(provider).then(result=>{console.log(result)})
     }
+  },
+  beforeCreate(){
+      var config = {
+        apiKey: "AIzaSyCnOVutlPNWFZsbCcqnTMYaNYxjisj23E0",
+        authDomain: "devf-dojo.firebaseapp.com",
+        databaseURL: "https://devf-dojo.firebaseio.com",
+        projectId: "devf-dojo",
+        storageBucket: "devf-dojo.appspot.com",
+        messagingSenderId: "963729866738"
+      }
+      if(!firebase.apps.length){
+        firebase.initializeApp(config)
+      }
   }
 }
 
