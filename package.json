@@ -6,8 +6,11 @@
   "repository": "https://github.com/devf-dojo/dojo-front",
   "license": "MIT",
   "dependencies": {
+    "@rafamaciel/firebase": "^1.0.0",
+    "firebase": "^4.2.0",
     "node-sass": "^4.5.3",
     "nuxt": "^1.0.0-alpha.5",
+    "promise-polyfill": "^6.0.2",
     "sass-loader": "^6.0.6"
   },
   "devDependencies": {

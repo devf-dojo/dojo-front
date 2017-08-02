@@ -11,5 +11,6 @@ module.exports = {
   },
   css:[
     '~/styles/main.scss'
+
   ]
 }
