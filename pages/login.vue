@@ -30,11 +30,11 @@ export default {
   beforeCreate(){
       var config = {
         apiKey: "#",
-        authDomain: "devf-dojo-admin.firebaseapp.com",
-        databaseURL: "https://devf-dojo-admin.firebaseio.com",
-        projectId: "devf-dojo-admin",
-        storageBucket: "devf-dojo-admin.appspot.com",
-        messagingSenderId: "183887932653"
+        authDomain: "#",
+        databaseURL: "#",
+        projectId: "#",
+        storageBucket: "#",
+        messagingSenderId: "#"
       }
       if(!firebase.apps.length){
         firebase.initializeApp(config)
