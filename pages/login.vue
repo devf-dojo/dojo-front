@@ -29,12 +29,12 @@ export default {
   },
   beforeCreate(){
       var config = {
-        apiKey: "AIzaSyCnOVutlPNWFZsbCcqnTMYaNYxjisj23E0",
-        authDomain: "devf-dojo.firebaseapp.com",
-        databaseURL: "https://devf-dojo.firebaseio.com",
-        projectId: "devf-dojo",
-        storageBucket: "devf-dojo.appspot.com",
-        messagingSenderId: "963729866738"
+        apiKey: "#",
+        authDomain: "devf-dojo-admin.firebaseapp.com",
+        databaseURL: "https://devf-dojo-admin.firebaseio.com",
+        projectId: "devf-dojo-admin",
+        storageBucket: "devf-dojo-admin.appspot.com",
+        messagingSenderId: "183887932653"
       }
       if(!firebase.apps.length){
         firebase.initializeApp(config)
