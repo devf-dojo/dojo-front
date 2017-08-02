@@ -1,7 +1,7 @@
 <template id="">
   <div class="">
 
-    <a class="waves-effect waves-light btn" v-on:click="login( )"><i class="material-icons right"></i>log in
+    <a class="waves-effect waves-light btn" v-on:click="login()"><i class="material-icons right"></i>log in
   </a>
 
 
@@ -24,17 +24,19 @@ export default {
   methods: {
     login () {
       var provider = new firebase.auth.GithubAuthProvider()
-      firebase.auth().signInWithPopup(provider).then(result=>{console.log(result)})
+      firebase.auth().signInWithPopup(provider).then(function (result) {
+          console.log(result)
+      })
     }
   },
   beforeCreate(){
       var config = {
         apiKey: "#",
-        authDomain: "#",
-        databaseURL: "#",
-        projectId: "#",
-        storageBucket: "#",
-        messagingSenderId: "#"
+        authDomain: "devf-dojo-admin.firebaseapp.com",
+        databaseURL: "https://devf-dojo-admin.firebaseio.com",
+        projectId: "devf-dojo-admin",
+        storageBucket: "devf-dojo-admin.appspot.com",
+        messagingSenderId: "183887932653"
       }
       if(!firebase.apps.length){
         firebase.initializeApp(config)
