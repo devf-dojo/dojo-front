@@ -1,6 +1,7 @@
 <template id="" xmlns:v-on="http://www.w3.org/1999/xhtml">
-  <div class="">
-    <a class="waves-effect waves-light btn" v-on:click="login()"><i class="material-icons right"></i>log in</a>
+  <div class="center-align" id="login">
+    <a class="waves-effect waves-light btn" v-on:click="login()"><i class="fa fa-github" aria-hidden="true"></i></i>log in</a>
+
   </div>
 </template>
 
@@ -81,7 +82,7 @@ export default {
   },
   beforeCreate(){
       var config = {
-        apiKey: "#",
+        apiKey: "AIzaSyD1VJ6FzFYDVm0NTAh4bE-_I4M7pdH5uZo",
         authDomain: "devf-dojo-admin.firebaseapp.com",
         databaseURL: "https://devf-dojo-admin.firebaseio.com",
         projectId: "devf-dojo-admin",
@@ -96,3 +97,9 @@ export default {
 }
 
 </script>
+<style>
+  i{
+    margin: 0 5px;
+  }
+
+</style>
