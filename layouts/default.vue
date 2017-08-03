@@ -1,12 +1,12 @@
 <template>
   <div>
-    <nav>
+    <nav class="#424242 grey darken-3">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Logo</a>
+        <a href="#"> Apple </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="/login">login</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">JavaScript</a></li>
+          <li><a href="/login">Log In</a></li>
+          <li><a href="badges.html">About</a></li>
+          <li><a href="collapsible.html">Sign Up</a></li>
         </ul>
       </div>
     </nav>
