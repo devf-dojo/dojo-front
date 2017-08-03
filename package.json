@@ -22,6 +22,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt",
-    "test": "ava --serial --verbose"
+    "test": "ava --serial --verbose",
+    "generate": "nuxt generate"
   }
 }
