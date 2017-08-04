@@ -4,10 +4,14 @@ import mutations from './mutations'
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      token: '',
-      id: '',
-      name: '',
-      email: ''
+      user: {
+        token: '',
+        id: '',
+        name: '',
+        email: '',
+        avatar: '',
+        auth: false
+      }
     },
     mutations
   })

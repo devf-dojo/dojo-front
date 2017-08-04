@@ -6013,6 +6013,12 @@ vue@~2.3.3:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.3.4.tgz#5ec3b87a191da8090bbef56b7cfabd4158038171"
 
+vuex-persist@^0.1.8:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/vuex-persist/-/vuex-persist-0.1.8.tgz#9e1d0fbc80196b5df6a77b8749b3db47541c73dc"
+  dependencies:
+    vuex "^2.3.1"
+
 vuex@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/vuex/-/vuex-2.3.1.tgz#cde8e997c1f9957719bc7dea154f9aa691d981a6"
