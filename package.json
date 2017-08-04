@@ -6,7 +6,6 @@
   "repository": "https://github.com/devf-dojo/dojo-front",
   "license": "MIT",
   "dependencies": {
-    "@rafamaciel/firebase": "^1.0.0",
     "axios": "^0.16.2",
     "firebase": "^4.2.0",
     "node-sass": "^4.5.3",
@@ -16,6 +15,14 @@
   },
   "devDependencies": {
     "ava": "^0.21.0",
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-html": "^3.1.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
     "jsdom": "^11.1.0"
   },
   "scripts": {
@@ -23,6 +30,7 @@
     "build": "nuxt build",
     "start": "nuxt",
     "test": "ava --serial --verbose",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   }
 }
