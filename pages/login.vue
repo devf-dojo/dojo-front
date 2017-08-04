@@ -1,8 +1,7 @@
 <template id="" xmlns:v-on="http://www.w3.org/1999/xhtml">
-  <div class="center-align" id="login">
+      <div class="center-align" id="login">
     <a class="waves-effect waves-light btn" v-on:click="login()"><i class="fa fa-github" aria-hidden="true"></i></i>log in</a>
-
-  </div>
+      </div>
 </template>
 
 <script>
