@@ -31,13 +31,14 @@ const sendSlack = (msg) => {
     })
 };
 
-const getUserAPI = function (uid) {
+const getUserAPI = function (uid, token) {
     const url = 'https://us-central1-devf-dojo-admin.cloudfunctions.net/api/v1/dojo/get_user';
     axios.post(`${url}`,{
         uid:uid
       },{
       headers:{
-        "Content-Type":"application/json"
+        "Content-Type":"application/json",
+        'Authorization': 'Bearer ' + token
       }})
       .then(response=>console.log(response))
       .catch(error=>console.warn(error))
@@ -55,8 +56,10 @@ export default {
     login () {
       const provider = new firebase.auth.GithubAuthProvider()
       firebase.auth().signInWithPopup(provider).then((result) => {
-          const uid = result.user.uid;
-          getUserAPI(uid)
+          firebase.auth().currentUser.getToken().then(function(token) {
+              const uid = result.user.uid;
+              getUserAPI(uid, token);
+          })
       },(error) => {
           sendSlack(error)
           console.log(error.code)
