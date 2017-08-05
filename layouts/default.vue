@@ -2,7 +2,7 @@
   <div>
     <nav class="#424242 grey darken-3">
       <div class="nav-wrapper">
-        <a href="#"> Apple </a>
+        <a img=""> Apple </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="/login">Log In</a></li>
           <li><a href="badges.html">About</a></li>
