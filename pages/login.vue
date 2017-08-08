@@ -1,6 +1,11 @@
 <template id="" xmlns:v-on="http://www.w3.org/1999/xhtml">
-      <div class="center-align" id="login">
-    <a class="waves-effect waves-light btn" v-on:click="login()"><i class="fa fa-github" aria-hidden="true"></i></i>log in</a>
+      <div id="login"
+           class="center-align valign-wrapper">
+        <a v-on:click="login()"
+           class="waves-effect waves-light btn valign">
+          <i class="fa fa-github" aria-hidden="true"></i>
+            log in
+        </a>
       </div>
 </template>
 

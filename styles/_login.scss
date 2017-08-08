@@ -1,18 +1,15 @@
-#login {
-  height: 740px;
+nav {
+	background: black;
+	.brand-logo {
+		font-style: arial;
+	  	color: white;
+	  	align: center;
+ 	}
  }
-#up {
-  background: black;
- }
-nav .brand-logo {
-  font-style: arial;
-  color: white;
-  align: center;
- }
+
 .btn {
   background-color: black;
   color: white;
-  margin: 350px 0 0 0;
  }
 body {
   background: url("/fondo.jpg") no-repeat center center fixed;
