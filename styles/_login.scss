@@ -1,16 +1,13 @@
-#login {
-  height: 740px;
+nav {
+	background: black;
+	.brand-logo {
+		font-style: arial;
+	  	color: white;
+	  	align: center;
+ 	}
  }
-#up {
-  background: black;
- }
-nav .brand-logo {
-  font-style: arial;
-  color: white;
-  align: center;
- }
+
 .btn {
   background-color: black;
   color: white;
-  margin: 350px 0 0 0;
- }
+}
