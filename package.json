@@ -7,11 +7,13 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.16.2",
+    "config": "^1.26.1",
     "firebase": "^4.2.0",
     "node-sass": "^4.5.3",
     "nuxt": "^1.0.0-alpha.5",
     "promise-polyfill": "^6.0.2",
-    "sass-loader": "^6.0.6"
+    "sass-loader": "^6.0.6",
+    "vuex-persist": "^0.1.8"
   },
   "devDependencies": {
     "ava": "^0.21.0",
@@ -31,6 +33,6 @@
     "start": "nuxt",
     "test": "ava --serial --verbose",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore . --fix"
   }
 }
