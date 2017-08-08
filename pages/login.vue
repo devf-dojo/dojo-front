@@ -1,9 +1,41 @@
-<template id="" xmlns:v-on="http://www.w3.org/1999/xhtml">
-  <div class="">
-    <a class="waves-effect waves-light btn" v-on:click="login()"><i class="material-icons right"></i>log in</a>
+<template>
+  <div>
+    <div class="" v-if="!user.auth">
+      <a class="waves-effect waves-light btn" v-on:click="login()"><i class="material-icons right"></i>log in</a>
+    </div>
+    <div v-if="user.auth" class="row">
+      <div class="col s10 offset-s1">
+        <div class="card">
+          <div class="row">
+            <div class="col s2">
+              <img :src="user.avatar" class="avatar" />
+            </div>
+            <div class="col s10">
+              <div class="input-field col s6">
+                <input id="name" type="text" class="validate" v-model="cv.name">
+                <label for="name">Nombre</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="email" type="email" class="validate" v-model="cv.email">
+                <label for="email">Email</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
-
+<style>
+  .avatar{
+    width: 100%;
+    height: auto;
+  }
+  .card{
+    margin-top: 20px;
+    padding: 10px;
+  }
+</style>
 <script>
 import * as firebase from 'firebase'
 import axios from 'axios'
@@ -13,9 +45,22 @@ export default {
 
   data () {
     return {
-
+      cv:{
+        name:'',
+        email:'',
+        cintas:[],
+        skills:[],
+        bio:'',
+        telefono:'',
+        interests:[],
+        hoobies:[],
+        
+      }
     }
   },
+  computed: mapState([
+    'user'
+  ]),
   methods: {
     login () {
       const store = this.$store

@@ -7,6 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.16.2",
+    "config": "^1.26.1",
     "firebase": "^4.2.0",
     "node-sass": "^4.5.3",
     "nuxt": "^1.0.0-alpha.5",
