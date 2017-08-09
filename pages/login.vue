@@ -1,30 +1,12 @@
-<template>
-  <div>
-    <div class="" v-if="!user.auth">
-      <a class="waves-effect waves-light btn" v-on:click="login()"><i class="material-icons right"></i>log in</a>
-    </div>
-    <div v-if="user.auth" class="row">
-      <div class="col s10 offset-s1">
-        <div class="card">
-          <div class="row">
-            <div class="col s2">
-              <img :src="user.avatar" class="avatar" />
-            </div>
-            <div class="col s10">
-              <div class="input-field col s6">
-                <input id="name" type="text" class="validate" v-model="cv.name">
-                <label for="name">Nombre</label>
-              </div>
-              <div class="input-field col s6">
-                <input id="email" type="email" class="validate" v-model="cv.email">
-                <label for="email">Email</label>
-              </div>
-            </div>
-          </div>
-        </div>
+<template id="" xmlns:v-on="http://www.w3.org/1999/xhtml">
+      <div id="login"
+           class="center-align valign-wrapper">
+        <a v-on:click="login()"
+           class="waves-effect waves-light btn valign">
+          <i class="fa fa-github" aria-hidden="true"></i>
+            log in
+        </a>
       </div>
-    </div>
-  </div>
 </template>
 <style>
   .avatar{
@@ -54,7 +36,7 @@ export default {
         telefono:'',
         interests:[],
         hoobies:[],
-        
+
       }
     }
   },
@@ -87,15 +69,15 @@ export default {
       })
     }
   },
-  beforeCreate () {
-    var config = {
-      apiKey: 'AIzaSyD1VJ6FzFYDVm0NTAh4bE-_I4M7pdH5uZo',
-      authDomain: 'devf-dojo-admin.firebaseapp.com',
-      databaseURL: 'https://devf-dojo-admin.firebaseio.com',
-      projectId: 'devf-dojo-admin',
-      storageBucket: 'devf-dojo-admin.appspot.com',
-      messagingSenderId: '183887932653'
-    }
+  beforeCreate(){
+      var config = {
+        apiKey: "AIzaSyD1VJ6FzFYDVm0NTAh4bE-_I4M7pdH5uZo",
+        authDomain: "devf-dojo-admin.firebaseapp.com",
+        databaseURL: "https://devf-dojo-admin.firebaseio.com",
+        projectId: "devf-dojo-admin",
+        storageBucket: "devf-dojo-admin.appspot.com",
+        messagingSenderId: "183887932653"
+      };
 
     if (!firebase.apps.length) {
       firebase.initializeApp(config)
@@ -139,3 +121,9 @@ export default {
     .catch(error => console.warn(error))
 }*/
 </script>
+<style>
+  i{
+    margin: 0 5px;
+  }
+
+</style>
