@@ -8,79 +8,64 @@
         </a>
       </div>
 </template>
-
+<style>
+  .avatar{
+    width: 100%;
+    height: auto;
+  }
+  .card{
+    margin-top: 20px;
+    padding: 10px;
+  }
+</style>
 <script>
 import * as firebase from 'firebase'
-
-var sendSlack = function (msg) {
-    var webhookURI = 'https://hooks.slack.com/services/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';
-
-    $.ajax(
-        {
-          type: 'POST',
-          dataType: 'json',
-          url: webhookURI,
-          data: 'payload=' + JSON.stringify({
-                  text: msg
-            })
-        }
-    ).done(function () {
-       console.log('DONE')
-    }).fail(function (error) {
-        console.log(error)
-    }).always(function () {
-        console.log('COMPLETE')
-    })
-};
-
-
-
-
-var getUserAPI = function (uid) {
-    var url = 'https://us-central1-devf-dojo-admin.cloudfunctions.net/api/v1/dojo/get_user';
-    var payload = JSON.stringify(uid);
-    console.log(payload)
-
-    $.ajax({
-        url: url,
-        type: 'POST',
-        data: payload,
-        contentType:"application/json; charset=utf-8",
-        statusCode: {
-            404: function (error) {
-                sendSlack('No se encontro el recurso en la API ' +  url + ' ' + error)
-            }
-        }
-    }).done(function (result) {
-        console.log('SUCCESS')
-        console.log(result)
-
-
-    }).fail(function (error) {
-        sendSlack('Ocurrio un error en la peticion a ' + url + ' '  + error)
-    });
-};
-
+import axios from 'axios'
+import { mapState } from 'vuex'
 
 export default {
 
   data () {
     return {
+      cv:{
+        name:'',
+        email:'',
+        cintas:[],
+        skills:[],
+        bio:'',
+        telefono:'',
+        interests:[],
+        hoobies:[],
 
       }
-    },
+    }
+  },
+  computed: mapState([
+    'user'
+  ]),
   methods: {
     login () {
-      var provider = new firebase.auth.GithubAuthProvider()
-      firebase.auth().signInWithPopup(provider).then(function (result) {
-          var uid = result.user.uid;
-          console.log(uid + 'UUID')
-          getUserAPI({uid});
-
-      }, function (error) {
-
-          console.log(error.code)
-          console.log(error)
+      const store = this.$store
+      const provider = new firebase.auth.GithubAuthProvider()
+      firebase.auth().signInWithPopup(provider).then((result) => {
+        const user_data = result.user.providerData[0]
+        console.log(result.user)
+        console.log(user_data)
+        firebase.auth().currentUser.getToken().then(function (token) {
+          //const uid = result.user.uid
+          //getUserAPI(uid, token)
+          const user = {
+            token: token,
+            id: result.user.uid,
+            email: user_data.email,
+            avatar: user_data.photoURL
+          }
+          store.commit('saveUserData', user)
+        })
+      }, (error) => {
+        sendSlack(error)
+        console.log(error.code)
+        console.log(error)
       })
     }
   },
@@ -94,12 +79,47 @@ export default {
         messagingSenderId: "183887932653"
       };
 
-      if(!firebase.apps.length){
-        firebase.initializeApp(config)
-      }
+    if (!firebase.apps.length) {
+      firebase.initializeApp(config)
+    }
   }
 }
 
+/*const sendSlack = (msg) => {
+  const webhookURI = 'https://hooks.slack.com/services/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'
+
+  axios.post(`${webhookURI}`)
+
+  $.ajax(
+    {
+      type: 'POST',
+      dataType: 'json',
+      url: webhookURI,
+      data: 'payload=' + JSON.stringify({
+        text: msg
+      })
+    }
+  ).done(function () {
+    console.log('DONE')
+  }).fail(function (error) {
+    console.log(error)
+  }).always(function () {
+    console.log('COMPLETE')
+  })
+}*/
+
+/*const getUserAPI = function (uid, token) {
+  const url = 'https://us-central1-devf-dojo-admin.cloudfunctions.net/api/v1/dojo/get_user'
+  axios.post(`${url}`, {
+    uid: uid
+  }, {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    }})
+    .then(response => console.log(response))
+    .catch(error => console.warn(error))
+}*/
 </script>
 <style>
   i{

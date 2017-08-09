@@ -5,9 +5,16 @@ body, html {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	color: #fff;
 }
 
 #__nuxt {
 	height: 100%;
   	margin:0;
+}
+
+.row {
+    margin-left: 60px;
+    margin-right: 500px;
+    margin-bottom: 20px;
 }
