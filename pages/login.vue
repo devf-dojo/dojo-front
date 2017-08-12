@@ -1,7 +1,12 @@
 <template>
-  <div>
-    <div class="" v-if="!user.auth">
-      <a class="waves-effect waves-light btn" v-on:click="login()"><i class="material-icons right"></i>log in</a>
+  <div class="black-text">
+    <div id="login"
+           class="center-align valign-wrapper" v-if="!user.auth">
+        <a v-on:click="login()"
+           class="waves-effect waves-light btn valign">
+          <i class="fa fa-github giticon" aria-hidden="true"></i>
+            log in
+        </a>
     </div>
     <div v-if="user.auth" class="row">
       <div class="col s10 offset-s1">
@@ -51,7 +56,7 @@
               </div>
             </div>
             <div class="col s6">
-              <div class="col s10">
+              <div class="col s10 input-field">
                 <input type="text" name="skill" id="skill" v-model="skill">
                 <label for="skill">Skill</label>
               </div>
@@ -62,7 +67,7 @@
               </div>
               <div class="col s12">
                 <ul>
-                  <li v-for="item in cv.skill">{{item}}</li>
+                  <li v-bind:key="item" v-for="item in cv.skills">{{item}}</li>
                 </ul>
               </div>
             </div>
@@ -150,15 +155,15 @@ export default {
       this.cv.cintas = this.cv.cintas.filter(value => value != cinta)
     }
   },
-  beforeCreate () {
-    var config = {
-      apiKey: 'AIzaSyD1VJ6FzFYDVm0NTAh4bE-_I4M7pdH5uZo',
-      authDomain: 'devf-dojo-admin.firebaseapp.com',
-      databaseURL: 'https://devf-dojo-admin.firebaseio.com',
-      projectId: 'devf-dojo-admin',
-      storageBucket: 'devf-dojo-admin.appspot.com',
-      messagingSenderId: '183887932653'
-    }
+  beforeCreate(){
+      var config = {
+        apiKey: "AIzaSyD1VJ6FzFYDVm0NTAh4bE-_I4M7pdH5uZo",
+        authDomain: "devf-dojo-admin.firebaseapp.com",
+        databaseURL: "https://devf-dojo-admin.firebaseio.com",
+        projectId: "devf-dojo-admin",
+        storageBucket: "devf-dojo-admin.appspot.com",
+        messagingSenderId: "183887932653"
+      };
 
     if (!firebase.apps.length) {
       firebase.initializeApp(config)
@@ -202,3 +207,18 @@ export default {
     .catch(error => console.warn(error))
 } */
 </script>
+<style>
+  .giticon{
+    margin: 0 5px;
+  }
+
+  #login{
+    width:100%;
+    height:100vh;
+  }
+
+  #login a{
+    margin: 0 auto;
+  }
+
+</style>
