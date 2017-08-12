@@ -19,6 +19,52 @@
                 <input id="email" type="email" class="validate" v-model="cv.email">
                 <label for="email">Email</label>
               </div>
+              <div class="input-field col s12">
+                <textarea id="bio" v-model="cv.bio" class="materialize-textarea"></textarea>
+                <label for="bio">Resumen</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s6">
+              <div class="col s10">
+                <label>Browser Select</label>
+                <select class="browser-default" v-model="cinta">
+                  <option value="" disabled selected>Choose your option</option>
+                  <option value="blanca">Blanca</option>
+                  <option value="roja">Roja</option>
+                  <option value="backend">Backend</option>
+                  <option value="frontend">Frontend</option>
+                  <option value="android">Android</option>
+                  <option value="ios">IOS</option>
+                </select>
+              </div>
+              <div class="col s2">
+                <a class="btn-floating waves-effect waves-light red" v-on:click="pushCinta()">
+                  <i class="material-icons">add</i>
+                </a>
+              </div>
+              <div class="col s12">
+                <ul>
+                  <li v-bind:key="item" v-for="item in cv.cintas">{{item}}</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col s6">
+              <div class="col s10">
+                <input type="text" name="skill" id="skill" v-model="skill">
+                <label for="skill">Skill</label>
+              </div>
+              <div class="col s2">
+                <a class="btn-floating waves-effect waves-light red" v-on:click="pushSkill()">
+                  <i class="material-icons">add</i>
+                </a>
+              </div>
+              <div class="col s12">
+                <ul>
+                  <li v-for="item in cv.skill">{{item}}</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -45,17 +91,19 @@ export default {
 
   data () {
     return {
-      cv:{
-        name:'',
-        email:'',
-        cintas:[],
-        skills:[],
-        bio:'',
-        telefono:'',
-        interests:[],
-        hoobies:[],
-        
-      }
+      cv: {
+        name: '',
+        email: '',
+        cintas: [],
+        skills: [],
+        bio: '',
+        telefono: '',
+        interests: [],
+        hoobies: []
+
+      },
+      cinta: '',
+      skill: ''
     }
   },
   computed: mapState([
@@ -70,8 +118,8 @@ export default {
         console.log(result.user)
         console.log(user_data)
         firebase.auth().currentUser.getToken().then(function (token) {
-          //const uid = result.user.uid
-          //getUserAPI(uid, token)
+          // const uid = result.user.uid
+          // getUserAPI(uid, token)
           const user = {
             token: token,
             id: result.user.uid,
@@ -85,6 +133,21 @@ export default {
         console.log(error.code)
         console.log(error)
       })
+    },
+    pushCinta () {
+      if (this.cinta) {
+        this.cv.cintas.push(this.cinta)
+        this.cinta = ''
+      }
+    },
+    pushSkill () {
+      if (this.skill) {
+        this.cv.skills.push(this.skill)
+        this.skill = ''
+      }
+    },
+    deleteCinta (cinta) {
+      this.cv.cintas = this.cv.cintas.filter(value => value != cinta)
     }
   },
   beforeCreate () {
@@ -103,7 +166,7 @@ export default {
   }
 }
 
-/*const sendSlack = (msg) => {
+/* const sendSlack = (msg) => {
   const webhookURI = 'https://hooks.slack.com/services/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'
 
   axios.post(`${webhookURI}`)
@@ -124,9 +187,9 @@ export default {
   }).always(function () {
     console.log('COMPLETE')
   })
-}*/
+} */
 
-/*const getUserAPI = function (uid, token) {
+/* const getUserAPI = function (uid, token) {
   const url = 'https://us-central1-devf-dojo-admin.cloudfunctions.net/api/v1/dojo/get_user'
   axios.post(`${url}`, {
     uid: uid
@@ -137,5 +200,5 @@ export default {
     }})
     .then(response => console.log(response))
     .catch(error => console.warn(error))
-}*/
+} */
 </script>
