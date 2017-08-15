@@ -1,8 +1,12 @@
 <template>
-  <div>
-    <p>Hi from {{ name }}</p>
-    <nuxt-link to="/">Home page</nuxt-link>
-  </div>
+	<div class="container">
+	    <!-- Page Content goes here -->
+		<div class="row">
+			<div class="col l12">
+				Hola Emmanuel
+			</div>
+		</div>
+	</div>
 </template>
 
 <script>

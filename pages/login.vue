@@ -1,12 +1,20 @@
-<template id="" xmlns:v-on="http://www.w3.org/1999/xhtml">
-      <div id="login"
-           class="center-align valign-wrapper">
-        <a v-on:click="login()"
-           class="waves-effect waves-light btn valign">
-          <i class="fa fa-github" aria-hidden="true"></i>
-            log in
-        </a>
+<template xmlns:v-on="http://www.w3.org/1999/xhtml">
+  <div class="container">
+
+    <div class="row">
+      <div class="s12 m12 l12 center">
+         <h1>Login</h1>
       </div>
+    </div>
+
+    <div class="row">
+      <div class="s12 m12 l12 center">
+         <a v-on:click="login()" class="black btn">Iniciar Sesión</a>
+      </div>
+    </div>
+    
+  </div>
+
 </template>
 <style>
   .avatar{
