@@ -56,14 +56,4 @@
 
 </template>
 
-<script>
-import jQuery from 'jQuery'
-
-ready() {
-   $(document).ready(function() {
-	$('select').material_select();
-	});
-  }
-
-</script>
 
