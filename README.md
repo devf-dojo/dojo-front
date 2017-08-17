@@ -1,6 +1,9 @@
 # About
 This the frontend project for the Dev.f Dojo program
 
+## App Host
+https://devf-dojo-admin.firebaseapp.com/
+
 ## Install dependencies
 Is highly recommend to install the dependencies with yarn for better support
 
