@@ -50,7 +50,7 @@
 
 		<div class="col s12 m6 l6 center">
 			<div class="col s6">
-				<div class="col s16">
+				<div class="col s6">
 					<p>Select</p>
 				</div>
 			</div>
@@ -67,12 +67,12 @@
 
 				<div>
           <div class="col s12 m12 l12 input-field">
-            <input type="text" name="skill" id="skill" v-model="skill">
+            <input type="text" name="skill" id="skill">
             <label for="skill">Skill</label>
           </div>
 					<!-- <div class="col s2">
             <a class="btn-floating waves-effect waves-light black" v-on:click="pushSkill()">
-              <i class="material-icons">add</i>
+              <i class="material-icons">add</i> v-model="skill"
             </a>
           </div> -->
 				</div>
