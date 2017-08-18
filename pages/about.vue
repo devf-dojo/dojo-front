@@ -3,9 +3,9 @@
 	<div class="container" onload="">
 	    <!-- Page Content goes here -->
 		<div class="row">
-			<div class="col s12 m12 l12 center">
-				<p>foto de perfil</p>
-			</div>
+			<div class="col s2 m6 l12 center">
+        <i class="large material-icons">account_circle</i>
+      </div>
 		</div>
 
 		<div class="row">
@@ -47,10 +47,10 @@
 				</div>
 			</div>
 		<div class="col s6">
-      <div class="col s10">
-         <label>Browser Select</label>
+      <div class="col s5">
+         <label>Que cintas cursaste</label>
          <select class="browser-default" v-model="cinta">
-           <option value="" disabled selected>Choose your option</option>
+           <option value="" disabled selected>Selecciona cinta</option>
            <option value="blanca">Blanca</option>
            <option value="roja">Roja</option>
            <option value="backend">Backend</option>
@@ -59,8 +59,20 @@
            <option value="ios">IOS</option>
          </select>
        </div>
+			 <!-- <span class="col s5">
+			 	<label>En que bach estuviste</label>
+				<select class="browser-default" v-model="cinta">
+					<option value="" disabled selected>Selecciona bach</option>
+					<option value="blanca">Bach 1</option>
+					<option value="roja">Roja</option>
+					<option value="backend">Backend</option>
+					<option value="frontend">Frontend</option>
+					<option value="android">Android</option>
+					<option value="ios">IOS</option>
+				</select>
+			</span> -->
         <div class="col s2">
-          <a class="btn-floating waves-effect waves-light green" v-on:click="pushCinta()">
+          <a class="btn-floating waves-effect waves-light black" v-on:click="pushCinta()">
            <i class="material-icons">add</i>
          </a>
        </div>
@@ -77,7 +89,7 @@
         <label for="skill">Skill</label>
       </div>
       <div class="col s1">
-        <a class="btn-floating waves-effect waves-light green" v-on:click="pushSkill()">
+        <a class="btn-floating waves-effect waves-light black" v-on:click="pushSkill()">
           <i class="material-icons">add</i>
         </a>
       </div>
