@@ -30,11 +30,11 @@
 					<label for="web_site">Sitio Web</label>
 				</div>
 
-				<div class="col s6">
+				<!-- <div class="col s6">
           <div class="col s6">
             <p>Select</p>
           </div>
-				</div>
+				</div> -->
 				<!-- <div class="col s2">
           <a class="btn-floating waves-effect waves-light Black" v-on:click="pushIdioma()">
             <i class="material-icons">add</i>
